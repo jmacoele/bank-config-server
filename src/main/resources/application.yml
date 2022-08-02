@@ -1,0 +1,27 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8888
+spring:
+  application:
+    name: bank-config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jmacoele/spring-cloud-config.git
+          
+          # If you are using ssh key to connect private git repository use following configs
+          #
+          # uri: git@{gitserver}.com:/repourl
+          # ignoreLocalSshSettings: true
+          # hostKey: someHostKey
+          # hostKeyAlgorithm: ssh-rsa
+          # privateKey: 
+          #           -----BEGIN RSA PRIVATE KEY-----
+          #           xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          #           your SSH Key in ~/.ssh/id_rsa
+          #           xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          #           -----END RSA PRIVATE KEY-----
