@@ -1,18 +1,19 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
 server:
   port: 8888
 spring:
+  security:
+    user:
+      name: jmacoe
+      password: jm@c03
   application:
     name: bank-config-service
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/jmacoele/spring-cloud-config.git
-          
+          uri: https://github.com/jmacoele/spring-cloud-config
+          search-paths: /
+          default-label: "main" 
           # If you are using ssh key to connect private git repository use following configs
           #
           # uri: git@{gitserver}.com:/repourl
